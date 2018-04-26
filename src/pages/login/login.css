@@ -1,0 +1,24 @@
+.login-wrapper{
+    position: relative;
+    height: 100%;
+    background: #324157;
+}
+.login-box{
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    width: 360px;
+    padding: 30px 30px 1px 30px;
+    background: #fff;
+    transform: translateX(-50%);
+    border-radius: 5px;
+}
+.login-form {
+    
+  }
+.login-form-forgot {
+    float: right;
+  }
+.login-form-button {
+    width: 100%;
+  }
