@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {withRouter} from 'react-router-dom';
 import {Form, Icon, Input, Button, Checkbox} from 'antd';
 import './login.css';
 const FormItem = Form.Item;
@@ -11,6 +12,10 @@ class LoginForm extends Component {
       .form
       .validateFields((err, values) => {
         if (!err) {
+          this
+            .props
+            .history
+            .push('/');
           console.log('Received values of form: ', values);
         }
       });
@@ -30,7 +35,11 @@ class LoginForm extends Component {
               ]
             })(
               <Input
-                prefix={< Icon type = "user" style = {{ color: 'rgba(0,0,0,.25)' }}/>}
+                prefix={< Icon type = "user" style = {
+                {
+                  color: 'rgba(0,0,0,.25)'
+                }
+              } />}
                 placeholder="Username"/>
             )}
           </FormItem>
@@ -44,7 +53,11 @@ class LoginForm extends Component {
               ]
             })(
               <Input
-                prefix={< Icon type = "lock" style = {{ color: 'rgba(0,0,0,.25)' }}/>}
+                prefix={< Icon type = "lock" style = {
+                {
+                  color: 'rgba(0,0,0,.25)'
+                }
+              } />}
                 type="password"
                 placeholder="Password"/>
             )}
@@ -56,7 +69,6 @@ class LoginForm extends Component {
             })(
               <Checkbox>记住密码</Checkbox>
             )}
-            <a className="login-form-forgot" href="">忘记密码</a>
             <Button type="primary" htmlType="submit" className="login-form-button">
               登录
             </Button>
@@ -66,12 +78,13 @@ class LoginForm extends Component {
     )
   }
 }
-const WrappedLoginForm = Form.create()(LoginForm);
+const WrappedLoginForm = Form.create()(withRouter(LoginForm));
 
 class Login extends Component {
   render() {
     return (
       <div className="login-wrapper">
+        <div className="login-title">React 后台管理系统</div>
         <WrappedLoginForm/>
       </div>
     )
