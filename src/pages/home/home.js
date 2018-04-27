@@ -1,10 +1,36 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import {Layout} from 'antd';
+import './home.css';
+import HomeHeader from '@/components/header/header.js';
+import Sidebar from '@/components/sidebar/sidebar.js';
+const {Content} = Layout;
 
-class Home extends Component{
-    render(){
+class Home extends Component {
+    state = {
+        collapsed: false
+    };
+    toggle = () => {
+        this.setState({
+            collapsed: !this.state.collapsed
+        });
+    }
+    render() {
         return (
-            <h1>这里是首页</h1>
-        )
+            <Layout className="wrapper">
+                <Sidebar/>
+                <Layout>
+                    <HomeHeader/>
+                    <Content
+                        style={{
+                        margin: '24px 16px',
+                        padding: 24,
+                        background: '#fff'
+                    }}>
+                        Content
+                    </Content>
+                </Layout>
+            </Layout>
+        );
     }
 }
 
