@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import {Layout, Menu, Icon} from 'antd';
 const {Sider} = Layout;
 
@@ -7,10 +8,18 @@ class Sidebar extends Component {
         return (
             <Sider>
                 <div className="logo"/>
-                <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-                    <Menu.Item key="1">
-                        <Icon type="user"/>
-                        <span>文章管理</span>
+                <Menu theme="dark" mode="inline" defaultSelectedKeys={['/article']}>
+                    <Menu.Item key="/dashboard">
+                        <Link to="/dashboard">
+                            <Icon type="video-camera"/>
+                            <span>Dashboard</span>
+                        </Link>
+                    </Menu.Item>
+                    <Menu.Item key="/article">
+                        <Link to="/article">
+                            <Icon type="video-camera"/>
+                            <span>文章列表</span>
+                        </Link>
                     </Menu.Item>
                     <Menu.Item key="2">
                         <Icon type="video-camera"/>

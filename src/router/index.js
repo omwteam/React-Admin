@@ -1,21 +1,19 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React, {Component} from 'react';
+import {Route, Switch} from 'react-router-dom';
 
-import home from '../pages/home/home.js';
-import login from '../pages/login/login.js';
+import ArticleList from '@/pages/article/index.js';
 
-class RouteConfig extends Component{
-    render(){
+const dashboard = () => <div>dashboard</div>
+
+class HomeRoutes extends Component {
+    render() {
         return (
-            <Router>
-                <Switch>
-                    <Route exact  path="/" component={home}></Route>
-                    <Route path="/login" component={login}></Route>
-                </Switch>
-            </Router>
+            <Switch>
+                <Route exact path="/dashboard" component={dashboard}/>
+                <Route exact path="/article" component={ArticleList}/>
+            </Switch>
         )
     }
 }
 
-
-export default RouteConfig;
+export default HomeRoutes;

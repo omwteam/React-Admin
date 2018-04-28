@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import {Layout} from 'antd';
 import './home.css';
 import HomeHeader from '@/components/header/header.js';
 import Sidebar from '@/components/sidebar/sidebar.js';
+import Routes from '@/router/index.js';
 const {Content} = Layout;
 
 class Home extends Component {
@@ -26,12 +28,16 @@ class Home extends Component {
                         padding: 24,
                         background: '#fff'
                     }}>
-                        Content
+                    <Routes></Routes>
+                        
                     </Content>
                 </Layout>
             </Layout>
         );
     }
 }
+
+const dashboard = () => <div>dashboard</div>
+const cate = () => <div>cate</div>
 
 export default Home;
