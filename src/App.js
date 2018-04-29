@@ -9,7 +9,7 @@ class AppRoute extends Component{
         return (
             <Router>
                 <Switch>
-                    <Route path="/" component={home}/>
+                    <Route path="/home" component={home}/>
                     <Route path="/login" component={login}/>
                 </Switch>
             </Router>

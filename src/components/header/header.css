@@ -1,4 +1,14 @@
 .header{
+    display: flex;
+    align-items: center;
     background: #fff;
+    padding: 0;
+}
+.header-trigger{
     padding: 0 20px;
+    cursor: pointer;
+}
+.header-breadcrumb{
+    line-height: 1;
+    font-size: 16px;
 }

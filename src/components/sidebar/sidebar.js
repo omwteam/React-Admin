@@ -6,19 +6,19 @@ const {Sider} = Layout;
 
 const menus = [
     {
-        path: '/dashboard',
+        path: '/home/dashboard',
         title: 'Dashboard',
         icon: 'dashboard'
     },{
-        path: '/article',
+        path: '/home/article',
         title: '文章列表',
         icon: 'profile'
     },{
-        path: '/cates',
+        path: '/home/cates',
         title: '分类管理',
         icon: 'folder-open'
     },{
-        path: '/tags',
+        path: '/home/tags',
         title: '标签管理',
         icon: 'tags-o'
     },
@@ -40,7 +40,7 @@ class Sidebar extends Component {
         return (
             <Sider>
                 <div className="logo"><Icon type="global"/> React</div>
-                <Menu theme="dark" mode="inline" defaultSelectedKeys={['/article']}>
+                <Menu theme="dark" mode="inline" defaultSelectedKeys={['/home/article']}>
                     {MenuList}
                     {/* <Menu.Item key="/dashboard">
                         <Link to="/dashboard">

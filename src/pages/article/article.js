@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import {Table, Icon, Divider, Button} from 'antd';
-import './index.css';
+import './article.css';
 
 const columns = [
     {
@@ -53,7 +54,9 @@ class ArticleList extends Component {
         return (
             <div>
                 <div className="article-handle">
+                <Link to="/home/article/create">
                     <Button type="primary" icon="plus">新增文章</Button>
+                </Link>
                 </div>
                 <Table columns={columns} dataSource={data}/>
             </div>
