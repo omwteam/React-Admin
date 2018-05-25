@@ -14,7 +14,7 @@ const menus = [
         title: '文章列表',
         icon: 'profile'
     },{
-        path: '/home/cates',
+        path: '/home/category',
         title: '分类管理',
         icon: 'folder-open'
     },{
@@ -42,26 +42,6 @@ class Sidebar extends Component {
                 <div className="logo"><Icon type="global"/> React</div>
                 <Menu theme="dark" mode="inline" defaultSelectedKeys={['/home/article']}>
                     {MenuList}
-                    {/* <Menu.Item key="/dashboard">
-                        <Link to="/dashboard">
-                            <Icon type="dashboard"/>
-                            <span>Dashboard</span>
-                        </Link>
-                    </Menu.Item>
-                    <Menu.Item key="/article">
-                        <Link to="/article">
-                            <Icon type="profile"/>
-                            <span>文章列表</span>
-                        </Link>
-                    </Menu.Item>
-                    <Menu.Item key="2">
-                        <Icon type="folder-open"/>
-                        <span>分类管理</span>
-                    </Menu.Item>
-                    <Menu.Item key="3">
-                        <Icon type="tags-o"/>
-                        <span>标签管理</span>
-                    </Menu.Item> */}
                 </Menu>
             </Sider>
         )

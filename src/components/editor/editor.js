@@ -5,16 +5,19 @@ import 'simplemde/dist/simplemde.min.css';
 import 'font-awesome/css/font-awesome.css';
 
 class Editor extends Component{
-    state = {
-        textValue: '## 哈哈哈',
-        options: {
-            autoDownloadFontAwesome: false
+    constructor(props){
+        super(props);
+        this.state = {
+            textValue: this.props.value,
+            options: {
+                autoDownloadFontAwesome: false
+            }
         }
     }
     render(){
         return (
             <div>
-                <SimpleMDE label="Your label" value={this.state.textValue} options={this.state.options}/>
+                <SimpleMDE value={this.state.textValue} options={this.state.options}/>
             </div>
         )
     }

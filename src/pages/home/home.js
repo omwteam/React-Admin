@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import {Layout} from 'antd';
 import './home.css';
 import HomeHeader from '@/components/header/header.js';
@@ -36,8 +35,5 @@ class Home extends Component {
         );
     }
 }
-
-const dashboard = () => <div>dashboard</div>
-const cate = () => <div>cate</div>
 
 export default Home;

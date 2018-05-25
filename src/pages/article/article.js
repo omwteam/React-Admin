@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import {Table, Icon, Divider, Button} from 'antd';
+import {Table, Divider, Button} from 'antd';
 import './article.css';
 
 const columns = [
@@ -8,7 +8,7 @@ const columns = [
         title: '标题',
         dataIndex: 'title',
         key: 'title',
-        render: text => <a href="javascript:;">{text}</a>
+        render: text => <a>{text}</a>
     }, {
         title: '分类',
         dataIndex: 'cate',
