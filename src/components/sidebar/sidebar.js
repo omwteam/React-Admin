@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 import {Layout, Menu, Icon} from 'antd';
 import './sidebar.css';
 const {Sider} = Layout;
@@ -35,11 +36,11 @@ const MenuList = menus.map((item) => {
 })
 
 class Sidebar extends Component {
-    
     render() {
+        console.log(this.props.sider.collapsed);
         return (
-            <Sider>
-                <div className="logo"><Icon type="global"/> React</div>
+            <Sider collapsed={this.props.sider.collapsed}>
+                <div className="logo"><Icon type="global"/>{this.props.sider.collapsed?'':' React'}</div>
                 <Menu theme="dark" mode="inline" defaultSelectedKeys={['/home/article']}>
                     {MenuList}
                 </Menu>
@@ -48,4 +49,4 @@ class Sidebar extends Component {
     }
 }
 
-export default Sidebar;
+export default connect(state=>({sider: state.sider}))(Sidebar);

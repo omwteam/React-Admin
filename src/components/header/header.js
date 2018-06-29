@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {Layout, Icon, Breadcrumb} from 'antd';
+import {connect} from 'react-redux';
+import {collapse} from '@/store/sider/action'
 import './header.css';
 const {Header} = Layout;
 
@@ -8,15 +10,17 @@ class HomeHeader extends Component {
         collapse: false
     }
     triggerHandle = ()=>{
-        this.setState({
-            collapse: !this.state.collapse
-        })
+        // this.setState({
+        //     collapse: !this.state.collapse
+        // })
+        this.props.collapse();
     }
     render() {
+        console.log(this.props)
         return (
             <Header className="header">
                 <div className="header-trigger" onClick={this.triggerHandle}>
-                    <Icon type={this.state.collapse?'menu-unfold':'menu-fold'}/>
+                    <Icon type={this.props.sider.collapsed?'menu-unfold':'menu-fold'}/>
                 </div>
                 
                 <Breadcrumb className="header-breadcrumb">
@@ -29,4 +33,4 @@ class HomeHeader extends Component {
     }
 }
 
-export default HomeHeader;
+export default connect(state=>({sider: state.sider}),{collapse})(HomeHeader);
