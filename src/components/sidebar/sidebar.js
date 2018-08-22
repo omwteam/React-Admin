@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
+import {changeCrumbs} from '@/store/sider/action'
 import {Layout, Menu, Icon} from 'antd';
 import './sidebar.css';
 const {Sider} = Layout;
@@ -24,20 +25,20 @@ const menus = [
         icon: 'tags-o'
     },
 ]
-const MenuList = menus.map((item) => {
-    return (
-        <Menu.Item key={item.path}>
-            <Link to={item.path}>
-                <Icon type={item.icon}/>
-                <span>{item.title}</span>
-            </Link>
-        </Menu.Item>
-    )
-})
+
 
 class Sidebar extends Component {
     render() {
-        console.log(this.props.sider.collapsed);
+        const MenuList = menus.map((item) => {
+            return (
+                <Menu.Item key={item.path}>
+                    <Link to={item.path} onClick={() => {this.props.changeCrumbs(item.title)}}>
+                        <Icon type={item.icon}/>
+                        <span>{item.title}</span>
+                    </Link>
+                </Menu.Item>
+            )
+        })
         return (
             <Sider collapsed={this.props.sider.collapsed}>
                 <div className="logo"><Icon type="global"/>{this.props.sider.collapsed?'':' React'}</div>
@@ -49,4 +50,4 @@ class Sidebar extends Component {
     }
 }
 
-export default connect(state=>({sider: state.sider}))(Sidebar);
+export default connect(state=>({sider: state.sider}),{changeCrumbs})(Sidebar);

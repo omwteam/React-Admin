@@ -3,3 +3,10 @@ export const collapse = () => {
         type: 'COLLAPSE'
     }
 }
+
+export const changeCrumbs = (crumb) => {
+    return {
+        type: 'CRUMBS',
+        crumb
+    }
+}

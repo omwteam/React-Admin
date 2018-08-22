@@ -6,17 +6,10 @@ import './header.css';
 const {Header} = Layout;
 
 class HomeHeader extends Component {
-    state = {
-        collapse: false
-    }
     triggerHandle = ()=>{
-        // this.setState({
-        //     collapse: !this.state.collapse
-        // })
         this.props.collapse();
     }
     render() {
-        console.log(this.props)
         return (
             <Header className="header">
                 <div className="header-trigger" onClick={this.triggerHandle}>
@@ -25,7 +18,7 @@ class HomeHeader extends Component {
                 
                 <Breadcrumb className="header-breadcrumb">
                     <Breadcrumb.Item>
-                        <span>Dashboard</span>
+                        <span>{this.props.sider.crumb}</span>
                     </Breadcrumb.Item>
                 </Breadcrumb>
             </Header>
